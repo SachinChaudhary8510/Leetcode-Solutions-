@@ -1,42 +1,42 @@
+
 # 🟢 LeetCode 1816: Truncate Sentence
 
 ## 📌 Problem Statement
 
-A sentence is a list of words that are separated by a single space with no leading or trailing spaces. Each of the words consists of only uppercase and lowercase English letters (no punctuation).
-
-You are given a sentence `s` and an integer `k`. You want to truncate `s` such that it contains only the **first `k` words**. Return `s` after truncating it.
+A **sentence** is a string of words separated by single spaces, with no leading or trailing spaces.
+You are given a sentence `s` and an integer `k`. Truncate `s` to contain only the first `k` words.
 
 ---
 
 ## 🧩 Examples
 
-### Example 1:
+### Example 1
 **Input:**  
-`s = "Hello how are you Contestant"`, `k = 4`  
+`s = "Hello how are you Contestant", k = 4`  
 **Output:** `"Hello how are you"`
 
-### Example 2:
+### Example 2
 **Input:**  
-`s = "What is the solution to this problem"`, `k = 4`  
+`s = "What is the solution to this problem", k = 4`  
 **Output:** `"What is the solution"`
 
-### Example 3:
+### Example 3
 **Input:**  
-`s = "chopper is not a tanuki"`, `k = 5`  
+`s = "chopper is not a tanuki", k = 5`  
 **Output:** `"chopper is not a tanuki"`
 
 ---
 
-## 🔒 Constraints
+## ✅ Constraints
 
 - `1 <= s.length <= 500`
 - `k` is in the range `[1, the number of words in s]`
-- `s` consists only of lowercase and uppercase English letters and spaces
-- The words in `s` are separated by a single space
+- `s` contains only uppercase/lowercase English letters and spaces
+- Words are separated by **a single space**
 
 ---
 
-## ✅ Java Solution
+## 💻 Java Solution
 
 ```java
 class Solution {
@@ -50,8 +50,7 @@ class Solution {
             else if(c == ' ' && count != k){
                 str += c;
                 count++;
-            }
-            else
+            } else
                 break;
         }
         return str;
@@ -59,21 +58,59 @@ class Solution {
 }
 ```
 
+---
+
+## 🐍 Python Solution
+
+```python
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        return " ".join(s.split()[:k])
+```
+
 **📝 Explanation:**  
-- Traverse the string character by character.
-- Count spaces encountered until `k` words are included.
-- Concatenate characters accordingly and return the truncated sentence.
+- Split the sentence into words
+- Join the first `k` words with a space
 
 ---
 
-## 🏁 Summary
+## 💠 C++ Solution
 
-| Language     | Logic                        | Notes                       |
-|--------------|------------------------------|-----------------------------|
-| Java         | Character iteration & count  | Manual space counting logic |
+```cpp
+class Solution {
+public:
+    string truncateSentence(string s, int k) {
+        int count = 0;
+        string result = "";
+        for (char c : s) {
+            if (c == ' ') {
+                count++;
+                if (count == k) break;
+            }
+            result += c;
+        }
+        return result;
+    }
+};
+```
 
-🧠 **Key Insight:** Stop parsing after encountering the `k`-th word.
+**📝 Explanation:**  
+- Iterate over each character
+- Count spaces until `k` words are collected
 
 ---
 
-🚀 **Happy Coding!**
+## 🏆 Summary
+
+| Language | Logic | Performance |
+|----------|-------|-------------|
+| Java     | Manual char iteration | Good for learning character-level parsing |
+| Python   | Use of built-in split & join | Most concise and pythonic |
+| C++      | Efficient space-counting loop | Fast and memory-efficient |
+
+🔑 **Key Insight:** Break the sentence using space as a delimiter and limit the result to `k` segments.
+
+---
+
+🚀 Happy Coding! 🔥  
+💬 _Contributions & suggestions are welcome!_
