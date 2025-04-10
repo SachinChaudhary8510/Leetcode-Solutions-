@@ -98,8 +98,8 @@ Sort pass is `O(n log n)`
 Extra space used to store result array
 
 ## 🌟 Key Takeaways
--`Understand array mutation techniques`
+- `Understand array mutation techniques`
 
--`Reinforce transformation + sorting logic`
+- `Reinforce transformation + sorting logic`
 
--`Excellent beginner-level problem that teaches sequencing of transformations`
+- `Excellent beginner-level problem that teaches sequencing of transformations`
