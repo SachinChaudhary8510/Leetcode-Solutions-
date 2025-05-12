@@ -1,6 +1,6 @@
 # 📈 LeetCode Problem 1232: Check If It Is a Straight Line
  
-## 📘 Problem Statement
+## 📘 Problem Statement 
 You are given an array `coordinates`, where `coordinates[i] = [x, y]` represents a point in a 2D plane.
 
 **Objective:**  
